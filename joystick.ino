@@ -1,7 +1,7 @@
 #include "Joystick.h"
 
-Joystick_ Joystick(JOYSTICK_DEFAULT_REPORT_ID, JOYSTICK_TYPE_JOYSTICK, 16, 0,
-   true,  true,  true, false, false, false,  true, true, false, false, false);
+Joystick_ Joystick(0x13, JOYSTICK_TYPE_JOYSTICK, 16, 0,
+   true,  true,  true,  true, false,  true, false, false, false, false, false);
 //    X,     Y,     Z,    RX,    RY,    RZ,  rudr, throt, accel, brake, steer);
 
 
@@ -106,8 +106,8 @@ void loop() {
   */
   Joystick.setXAxis(joy_ax1_val);
   Joystick.setYAxis(joy_ax2_val);
-  Joystick.setRudder(joy_ax3_val);
-  Joystick.setThrottle(joy_ax4_val);
+  Joystick.setRxAxis(joy_ax3_val);
+  Joystick.setRzAxis(joy_ax4_val);
   Joystick.setZAxis(joy_ax5_val);
 
   if (digitalRead(CHKPIN) == LOW){
